@@ -5,10 +5,12 @@ file_path = os.path.join(script_dir, "books", "frankenstein.txt")
 
 def main():
     contents = read_file(file_path)
-    print(contents)
-    print(f"There are {count_words(contents)} words in the book.")
+    # print(contents)
+    print(f"--- Begin report of {file_path} ---")
+    print(f"{count_words(contents)} words found in the document.")
     letters = count_characters(contents)
-    print(f"The number of each character in the text is: {letters}")
+    for letter in letters:
+        print(f"The {letter} character was found {letters[letter]} times")
 
     
 def read_file(file_name):
